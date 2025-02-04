@@ -1,0 +1,33 @@
+/* menu.css */
+
+/* Drop-down menu หลัก */
+select {
+  width: 300px; /* ปรับความกว้างตามต้องการ */
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  appearance: none; /* ทำให้ Drop-down menu ดูสวยงามในทุก browser */
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-chevron-down' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") no-repeat right 10px center; /* เพิ่มลูกศรลง */
+  cursor: pointer;
+}
+
+/* ตัวเลือกใน Drop-down menu */
+select option {
+  font-size: 16px;
+  padding: 5px;
+}
+
+/* เมื่อนำเมาส์วางเหนือ Drop-down menu */
+select:hover {
+  border-color: #888;
+}
+
+/* เมื่อ Drop-down menu ถูกเลือก */
+select:focus {
+  outline: none;
+  border-color: #007bff; /* เปลี่ยนสีขอบเมื่อ focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2); /* เพิ่มเงาเมื่อ focus */
+}
+
+/* ปรับแต่ง
