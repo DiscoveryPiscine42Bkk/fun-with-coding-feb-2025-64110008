@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab</title>
+    <style>
+        html, body {
+            margin: 0; /* รีเซ็ต margin ของ html และ body */
+            height: 100%; /* กำหนดความสูงเต็มหน้าจอ */
+        }
+        table {
+            width: 100%; /* ความกว้างเต็ม viewport */
+            height: 100%; /* ความสูงเต็ม viewport */
+            border-collapse: collapse; /* รวมเส้นขอบตาราง */
+        }
+        th, td {
+            border: 1px solid black; /* เส้นขอบของแต่ละช่อง */
+            padding: 8px; /* ระยะห่างข้อความกับขอบ */
+            text-align: center; /* จัดข้อความอยู่ตรงกลาง */
+            vertical-align: middle; /* จัดข้อความให้อยู่กึ่งกลางแนวตั้ง */
+        }
+        td:nth-child(1) {
+            background-color: lightgreen; /* สีพื้นหลังช่องแรก */
+        }
+        td:nth-child(2) {
+            background-color: lightcoral; /* สีพื้นหลังช่องสอง */
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td>First cell</td>
+            <td>Second cell</td>
+        </tr>
+    </table>
+
+</body>
+</html>
