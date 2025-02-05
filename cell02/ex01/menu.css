@@ -1,5 +1,14 @@
 /* menu.css */
-
+body {
+  display: flex; 
+    justify-content: center; 
+    flex-direction: column; 
+            align-items: center;
+    background-image: url("image3.jpg"); /* เปลี่ยน sandwich_background.jpg เป็นชื่อรูปภาพของคุณ */
+  background-size: cover; /* ปรับขนาดรูปภาพให้พอดีกับ Drop-down menu */
+  background-repeat: no-repeat; /* ป้องกันไม่ให้รูปภาพซ้ำ */
+  /* ... CSS properties อื่นๆ ... */
+}
 /* Drop-down menu หลัก */
 select {
   width: 300px; /* ปรับความกว้างตามต้องการ */
@@ -10,12 +19,17 @@ select {
   appearance: none; /* ทำให้ Drop-down menu ดูสวยงามในทุก browser */
   background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-chevron-down' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") no-repeat right 10px center; /* เพิ่มลูกศรลง */
   cursor: pointer;
+  text-align: center; /* จัดข้อความอยู่ตรงกลาง */
+  display: flex; 
+    justify-content: center; 
 }
 
 /* ตัวเลือกใน Drop-down menu */
 select option {
   font-size: 16px;
   padding: 5px;
+  display: flex; 
+    justify-content: center; 
 }
 
 /* เมื่อนำเมาส์วางเหนือ Drop-down menu */
