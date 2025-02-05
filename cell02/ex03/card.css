@@ -28,11 +28,11 @@ button {
 }
 
 .info {
-  text-align: left; /* จัดข้อความ Login และ Description ชิดซ้าย */
+  text-align: left;
 }
 
 .social img{
   width: 25px;
   height: 25px;
-  text-align: center; /* จัด Social Network Icons ไว้ตรงกลาง */
+  text-align: center;
 }
