@@ -1,0 +1,38 @@
+table {
+  border-collapse: collapse;
+  width: 300px;
+  margin: 0 auto;
+}
+
+td {
+  padding: 10px;
+  display: flex; 
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  
+}
+
+img {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.info {
+  text-align: left; /* จัดข้อความ Login และ Description ชิดซ้าย */
+}
+
+.social img{
+  width: 25px;
+  height: 25px;
+  text-align: center; /* จัด Social Network Icons ไว้ตรงกลาง */
+}
