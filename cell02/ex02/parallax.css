@@ -2,7 +2,6 @@ body {
   margin: 0;
   font-family: sans-serif;
 }
-
 section {
   height: 100vh;
   display: flex;
@@ -11,13 +10,11 @@ section {
   color: white;
   text-align: center;
 }
-
 #section1 {
   background-image: url("image1.jpg");
   background-size: cover;
   background-attachment: fixed;
 }
-
 #section2 {
   background-image: url("image2.jpg");
   background-size: cover;
