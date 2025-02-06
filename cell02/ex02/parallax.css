@@ -11,12 +11,12 @@ section {
   text-align: center;
 }
 #section1 {
-  background-image: url("image1.jpg");
+  background-image: url("https://imgcdn.stablediffusionweb.com/2024/11/28/150479d7-09d5-46a5-a107-d83af49396cd.jpg");
   background-size: cover;
   background-attachment: fixed;
 }
 #section2 {
-  background-image: url("image2.jpg");
+  background-image: url("https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://media.easy-peasy.ai/29010c38-7382-412b-85dc-cca05ff682e9/061ba06d-ff3c-4160-90f4-34cb865c23d2.png");
   background-size: cover;
   background-attachment: fixed;
   background-color: black;
