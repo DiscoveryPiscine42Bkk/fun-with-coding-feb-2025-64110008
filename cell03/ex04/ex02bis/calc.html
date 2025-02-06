@@ -14,7 +14,6 @@
   </select>
   <input type="string" id="rightOperand">
   <button id="calculateButton">Try me!</button>
-
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
     $(document).ready(() => {
@@ -59,11 +58,8 @@
       case '/': result = leftOperand / rightOperand; break;
       case '%': result = leftOperand % rightOperand; break;
     }
-
     alert(result);
-    console.log(result);
   });
-
   setInterval(() => {
     alert('Please, use me...');
   }, 30000);
