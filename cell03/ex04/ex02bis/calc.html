@@ -17,53 +17,42 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
     $(document).ready(() => {
-  $("#calculateButton").click(() => {
-    let leftOperand = $("#leftOperand").val();
-    let rightOperand = $("#rightOperand").val();
-    const operator = $("#operator").val();
-    if (isNaN(leftOperand)) {
-      if (leftOperand === "" || isNaN(parseFloat(leftOperand))) {
-        alert("Error: It's not a number");
-        return;
-      } else {
-        leftOperand = parseFloat(leftOperand);
-      }
-    } else {
-      leftOperand = parseInt(leftOperand);
-    }
-    if (isNaN(rightOperand)) {
-      if (rightOperand === "" || isNaN(parseFloat(rightOperand))) {
-        alert("Error: It's not a number");
-        return;
-      } else {
-        rightOperand = parseFloat(rightOperand);
-      }
-    } else {
-      rightOperand = parseInt(rightOperand);
-    }
-    if (isNaN(leftOperand) || isNaN(rightOperand) || leftOperand < 0 || rightOperand < 0) {
-      alert('Error :(');
-      return;
-    }
-    if ((operator === '/' || operator === '%') && rightOperand === 0) {
-      alert("It's over 9000!");
-      console.log("It's over 9000!");
-      return;
-    }
-    let result;
-    switch (operator) {
-      case '+': result = leftOperand + rightOperand; break;
-      case '-': result = leftOperand - rightOperand; break;
-      case '*': result = leftOperand * rightOperand; break;
-      case '/': result = leftOperand / rightOperand; break;
-      case '%': result = leftOperand % rightOperand; break;
-    }
-    alert(result);
-  });
-  setInterval(() => {
-    alert('Please, use me...');
-  }, 30000);
-});
+      $("#calculateButton").click(() => {
+        let leftOperand = $("#leftOperand").val();
+        let rightOperand = $("#rightOperand").val();
+        const operator = $("#operator").val();
+        if (leftOperand === "" || rightOperand === "") {
+          alert("Error: Please enter both numbers.");
+          return;
+        }
+         if (!Number.isInteger(Number(leftOperand)) || !Number.isInteger(Number(rightOperand)) ){
+          alert('Error :(');
+          return;
+        }
+        leftOperand = parseInt(leftOperand);
+        rightOperand = parseInt(rightOperand);
+        if (leftOperand < 0 || rightOperand < 0) {
+          alert('Error :(');
+          return;
+        }
+        if ((operator === '/' || operator === '%') && rightOperand === 0) {
+          alert("It's over 9000!");
+          return;
+        }
+        let result;
+        switch (operator) {
+          case '+': result = leftOperand + rightOperand; break;
+          case '-': result = leftOperand - rightOperand; break;
+          case '*': result = leftOperand * rightOperand; break;
+          case '/': result = leftOperand / rightOperand; break;
+          case '%': result = leftOperand % rightOperand; break;
+        }
+        alert(result);
+      });
+        setInterval(() => {
+        alert('Please, use me...');
+        }, 30000);
+    });
   </script>
 </body>
 </html>
