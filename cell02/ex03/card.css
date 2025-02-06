@@ -3,16 +3,13 @@ table {
   width: 300px;
   margin: 0 auto;
 }
-
 td {
   padding: 10px;
   display: flex; 
     flex-direction: column;
     align-items: center;
     text-align: center;
-  
 }
-
 img {
   width: 150px;
   height: 150px;
@@ -25,11 +22,9 @@ button {
   border: none;
   cursor: pointer;
 }
-
 .info {
   text-align: center;
 }
-
 .social img{
   width: 25px;
   height: 25px;

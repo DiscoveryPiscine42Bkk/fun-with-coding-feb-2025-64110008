@@ -1,58 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>เครื่องคิดเลข</title>
+    <title>เครื่องคิดเลข</title>
+    <script>
+        function calculate() {
+            let left = document.getElementById('left').value;
+            let right = document.getElementById('right').value;
+            let operator = document.getElementById('operator').value;
+
+            if (!Number.isInteger(Number(left)) || !Number.isInteger(Number(right)) || left < 0 || right < 0) {
+                alert('Error :(');
+                console.log('Error :(');
+                return;
+            }
+
+            if ((operator === '/' || operator === '%') && right == 0) {
+                alert("It's over 9000!");
+                console.log("It's over 9000!");
+                return;
+            }
+
+            let result;
+            switch (operator) {
+                case '+': result = parseInt(left) + parseInt(right); break;
+                case '-': result = parseInt(left) - parseInt(right); break;
+                case '*': result = parseInt(left) * parseInt(right); break;
+                case '/': result = parseInt(left) / parseInt(right); break;
+                case '%': result = parseInt(left) % parseInt(right); break;
+                default: return;
+            }
+
+            alert(result);
+        }
+
+        setInterval(() => {
+            alert("Please, use me...");
+        }, 30000);
+    </script>
 </head>
 <body>
-  <input type="text" id="leftOperand">
-  <select id="operator">
-    <option value="+">+</option>
-    <option value="-">-</option>
-    <option value="*">*</option>
-    <option value="/">/</option>
-    <option value="%">%</option>
-  </select>
-  <input type="text" id="rightOperand">
-  <button id="calculateButton">Try me!</button>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    $(document).ready(() => {
-      $("#calculateButton").click(() => {
-        let leftOperand = $("#leftOperand").val();
-        let rightOperand = $("#rightOperand").val();
-        const operator = $("#operator").val();
-        const numberRegex = /^-?\d*(\.\d+)?$/;
-
-        if (!numberRegex.test(leftOperand) || !numberRegex.test(rightOperand)) {
-          alert('Error: Operands must be numbers.');
-          return;
-        }
-        leftOperand = parseFloat(leftOperand);
-        rightOperand = parseFloat(rightOperand);
-
-        if (isNaN(leftOperand) || isNaN(rightOperand) || leftOperand < 0 || rightOperand < 0) {
-          alert('Error :(');
-          return;
-        }
-        if ((operator === '/' || operator === '%') && rightOperand === 0) {
-          alert("It's over 9000!");
-          console.log("It's over 9000!");
-          return;
-        }
-        let result;
-        switch (operator) {
-          case '+': result = leftOperand + rightOperand; break;
-          case '-': result = leftOperand - rightOperand; break;
-          case '*': result = leftOperand * rightOperand; break;
-          case '/': result = leftOperand / rightOperand; break;
-          case '%': result = leftOperand % rightOperand; break;
-        }
-        alert(result);
-      });
-      setInterval(() => {
-        alert('Please, use me...');
-      }, 30000);
-    });
-  </script>
+    <div>
+        <input type="number" id="left" >
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="number" id="right" >
+        <input type="button" value="Try me!" onclick="calculate()">
+    </div>
 </body>
 </html>
