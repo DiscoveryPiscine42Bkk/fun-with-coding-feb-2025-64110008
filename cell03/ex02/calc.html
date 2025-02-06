@@ -4,7 +4,7 @@
   <title>เครื่องคิดเลข</title>
 </head>
 <body>
-  <input type="number" id="leftOperand">
+  <input type="text" id="leftOperand">
   <select id="operator">
     <option value="+">+</option>
     <option value="-">-</option>
@@ -12,36 +12,56 @@
     <option value="/">/</option>
     <option value="%">%</option>
   </select>
-  <input type="number" id="rightOperand">
-  <button onclick="calculate()">Try me!</button>
+  <input type="text" id="rightOperand">
+  <button id="calculateButton">Try me!</button>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
-    function calculate() {
-      const leftOperand = parseInt(document.getElementById('leftOperand').value);
-      const rightOperand = parseInt(document.getElementById('rightOperand').value);
-      const operator = document.getElementById('operator').value;
-      if (isNaN(leftOperand) || isNaN(rightOperand) || leftOperand < 0 || rightOperand < 0) {
-        alert('Error :(');
-        return;
-      }
-      if ((operator === '/' || operator === '%') && rightOperand === 0) {
-        alert("It's over 9000!");
-        console.log("It's over 9000!");
-        return;
-      }
-      let result;
-      switch (operator) {
-        case '+': result = leftOperand + rightOperand; break;
-        case '-': result = leftOperand - rightOperand; break;
-        case '*': result = leftOperand * rightOperand; break;
-        case '/': result = leftOperand / rightOperand; break;
-        case '%': result = leftOperand % rightOperand; break;
-      }
-      alert(result);
-      console.log(result);
-    }
-    setInterval(() => {
-      alert('Please, use me...');
-    }, 30000);
+    $(document).ready(() => {
+      $("#calculateButton").click(() => {
+        let leftOperand = $("#leftOperand").val();
+        let rightOperand = $("#rightOperand").val();
+        const operator = $("#operator").val();
+
+        // Regular expression to check if the input contains only numbers (integers or decimals)
+        const numberRegex = /^-?\d*(\.\d+)?$/;
+
+        if (!numberRegex.test(leftOperand) || !numberRegex.test(rightOperand)) {
+          alert('Error: Operands must be numbers.');
+          return;
+        }
+
+        leftOperand = parseFloat(leftOperand);
+        rightOperand = parseFloat(rightOperand);
+
+        if (isNaN(leftOperand) || isNaN(rightOperand) || leftOperand < 0 || rightOperand < 0) {
+          alert('Error :(');
+          return;
+        }
+
+        if ((operator === '/' || operator === '%') && rightOperand === 0) {
+          alert("It's over 9000!");
+          console.log("It's over 9000!");
+          return;
+        }
+
+        let result;
+        switch (operator) {
+          case '+': result = leftOperand + rightOperand; break;
+          case '-': result = leftOperand - rightOperand; break;
+          case '*': result = leftOperand * rightOperand; break;
+          case '/': result = leftOperand / rightOperand; break;
+          case '%': result = leftOperand % rightOperand; break;
+        }
+
+        alert(result);
+        console.log(result);
+      });
+
+      setInterval(() => {
+        alert('Please, use me...');
+      }, 30000);
+    });
   </script>
 </body>
 </html>

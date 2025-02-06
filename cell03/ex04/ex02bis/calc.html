@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>เครื่องคิดเลข</title>
+</head>
+<body>
+  <input type="string" id="leftOperand">
+  <select id="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+    <option value="%">%</option>
+  </select>
+  <input type="string" id="rightOperand">
+  <button id="calculateButton">Try me!</button>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(() => {
+  $("#calculateButton").click(() => {
+    let leftOperand = $("#leftOperand").val();
+    let rightOperand = $("#rightOperand").val();
+    const operator = $("#operator").val();
+    if (isNaN(leftOperand)) {
+      if (leftOperand === "" || isNaN(parseFloat(leftOperand))) {
+        alert("Error: It's not a number");
+        return;
+      } else {
+        leftOperand = parseFloat(leftOperand);
+      }
+    } else {
+      leftOperand = parseInt(leftOperand);
+    }
+    if (isNaN(rightOperand)) {
+      if (rightOperand === "" || isNaN(parseFloat(rightOperand))) {
+        alert("Error: It's not a number");
+        return;
+      } else {
+        rightOperand = parseFloat(rightOperand);
+      }
+    } else {
+      rightOperand = parseInt(rightOperand);
+    }
+    if (isNaN(leftOperand) || isNaN(rightOperand) || leftOperand < 0 || rightOperand < 0) {
+      alert('Error :(');
+      return;
+    }
+    if ((operator === '/' || operator === '%') && rightOperand === 0) {
+      alert("It's over 9000!");
+      console.log("It's over 9000!");
+      return;
+    }
+    let result;
+    switch (operator) {
+      case '+': result = leftOperand + rightOperand; break;
+      case '-': result = leftOperand - rightOperand; break;
+      case '*': result = leftOperand * rightOperand; break;
+      case '/': result = leftOperand / rightOperand; break;
+      case '%': result = leftOperand % rightOperand; break;
+    }
+
+    alert(result);
+    console.log(result);
+  });
+
+  setInterval(() => {
+    alert('Please, use me...');
+  }, 30000);
+});
+  </script>
+</body>
+</html>
