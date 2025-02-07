@@ -1,65 +1,41 @@
-/* Basic styling for demonstration */
+
 body {
     margin: 0;
     font-family: sans-serif;
-    background-color: #FEEAD9;
-}
-table{
-    width: 100%; 
-    height: 100%; 
-    border-collapse: collapse;
-}
-td {
-  padding: 10px;
-  display: flex; 
+    background-color: #FAEDCE;
+    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 nav {
     position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #1b9ff7;
-    padding: 5px;
-}
-nav u {
-    list-style: none;
-    margin: 0;
-    padding: 10;
-    text-align: center;
+    left: 0;
+    height: 100%;
+    width: 10%;
+    padding: 0px;
 }
 nav ul {
     list-style: none;
     margin: 0;
-    padding: 10;
-    text-align: right;
+    padding: 0;
+    text-align: center;
 }
 nav li {
     display: inline;
-    margin: 0 10px;
+    margin: 0px;
 }
 section {
     display: flex;
 }
-#separate {
-    display: flex;
-    flex-direction: row; 
-    align-items: center; 
-    justify-content: space-between; 
-}
 .container {
-    max-width: 960px;
-    margin: 0 auto;
     display: flex; 
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 img {
-    max-width: 200px;
     float: center;
-    margin-right: 20px;
 }
 .item {
     margin-bottom: 20px;
@@ -67,37 +43,68 @@ img {
 button {
   background-color: #4CAF50;
   color: white;
-  padding: 10px 20px;
+  padding: 5px 10px;
   border: none;
   cursor: pointer;
+  margin:10%;
 }
-@media (max-width: 768px) {
+@media (max-width:375px ) {
     .container {
-        padding: 10px;
+        padding: 0px;
     }
     img {
         float: none;
         margin: 0 auto;
         display: block;
     }
+    nav {
+        padding: auto;
+        position: fixed;
+    }
+    #showcase {
+        padding: auto;
+        background-size: cover;
+    }
+    button {
+        padding: auto;
+    }
 }
 #showcase {
-    padding: 20px;
-    margin: 20px;
-    background-size: cover;
-    background-color: black;
+    width: 100%;
+    background-size :cover;
+    background-attachment: fixed;
+    background-color: #CCD5AE;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 #about {
     padding: 20px;
-    margin: 20px;
 }
 h1{
     color: rgb(0, 0, 0);
     text-align: center;
     font-size: 2em;
 }
+h2{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 3em;
+}
+h3{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 3em;
+}
 p{
     padding: 0px;
     margin: 2px;
+}
+#contact{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
 }
